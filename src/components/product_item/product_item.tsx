@@ -1,11 +1,17 @@
 import Link from "next/link";
-import AddShoppingCartSvg from 'svg-icons/add_shopping_cart.svg';
+import { useContext } from "react";
+import { IconButton } from "@material-ui/core";
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+
+import { CartContext } from "src/context/cart_context";
 
 interface StackProps {
     product: Product;
 }
 
 export const ProductItem = ({product}: StackProps) => {
+    const { addProduct } = useContext(CartContext);
+    
     return <div className="productItem">
         <div className="productItem__image">
             <img src={product.image} alt={product.title}/>
@@ -16,9 +22,9 @@ export const ProductItem = ({product}: StackProps) => {
             </Link>
             <div className="productItem__footer">
                 <span className="productItem__price">S/. {product.price}</span>
-                <div className="productItem__addButton" role="button">
-                    <AddShoppingCartSvg/>
-                </div>
+                <IconButton onClick={() => addProduct(product, 1)}>
+                    <AddShoppingCartIcon color="error" />
+                </IconButton>
             </div>
         </div>
     </div>;

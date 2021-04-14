@@ -8,6 +8,7 @@ interface StackProps {
 }
 
 const IndexPage:StatelessPage<StackProps> = ({products}) => <>
+    <title>TiendaMía</title>
     <Header/>
     <ProductList products={products}/>
 </>

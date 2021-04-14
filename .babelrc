@@ -3,14 +3,6 @@
       "next/babel"
    ],
    "plugins": [
-      [
-         "module-resolver",
-         {
-            "alias": {
-               "svg-icons": "./assets/svg-icons"
-            }
-         }
-      ],
       "inline-react-svg"
    ]
 }

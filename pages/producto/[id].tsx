@@ -8,6 +8,7 @@ interface StackProps {
 }
 
 const ProductDetailPage:StatelessPage<StackProps> = ({product}) => <>
+    <title>TiendaMía | Detalle de producto</title>
     <Header/>
     <ProductDetail product={product}/>
 </>
