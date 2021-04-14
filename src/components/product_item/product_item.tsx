@@ -21,7 +21,7 @@ export const ProductItem = ({product}: StackProps) => {
                 <span className="productItem__title">{product.title}</span>
             </Link>
             <div className="productItem__footer">
-                <span className="productItem__price">S/. {product.price}</span>
+                <span className="productItem__price">S/. {product.price.toFixed(2)}</span>
                 <IconButton onClick={() => addProduct(product, 1)}>
                     <AddShoppingCartIcon color="error" />
                 </IconButton>

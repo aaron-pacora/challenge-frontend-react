@@ -1,4 +1,4 @@
 declare type CartProduct = {
-    product: Produt;
+    product: Product;
     quantity: number
 };

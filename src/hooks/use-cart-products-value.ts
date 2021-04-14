@@ -3,6 +3,7 @@ import { CartContextData } from "src/context/cart_context";
 
 export const useCartProductsValue = ():CartContextData => {
     const [cartProducts, setCartProducts] = useState<CartProduct[]>([]);
+    const [displayPopUp, setThisDisplayPopUp] = useState<boolean>(false);
 
     const addProduct = useCallback((entryProduct:Product, quantity:number) => {
         const newCartProducts = [...cartProducts];
@@ -17,8 +18,20 @@ export const useCartProductsValue = ():CartContextData => {
         setCartProducts(newCartProducts);
     }, [cartProducts, setCartProducts]);
 
+    const setDisplayPopUp = useCallback((value:boolean) => {
+        if(value){
+            if(cartProducts.length == 0){
+                setThisDisplayPopUp(false);
+                return;
+            }
+        }
+        setThisDisplayPopUp(value);
+    }, [cartProducts, displayPopUp, setThisDisplayPopUp]);
+
     return {
         cartProducts,
-        addProduct
+        addProduct,
+        displayPopUp,
+        setDisplayPopUp
     }
 }

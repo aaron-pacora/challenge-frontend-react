@@ -5,7 +5,10 @@ import { useContext } from "react";
 import { CartContext } from "src/context/cart_context";
 
 export const Header = () => {
-    const { cartProducts } = useContext(CartContext);
+    const { cartProducts, displayPopUp, setDisplayPopUp } = useContext(CartContext);
+
+    const handleDisplayPopUp = () => setDisplayPopUp(!displayPopUp);
+
     let quantity = 0;
     cartProducts.forEach((item) => quantity += item.quantity);
     return <div className="header">
@@ -16,7 +19,7 @@ export const Header = () => {
             </div>
             <h3 className="header__subtitle">Productos</h3>
             <div className="header__contentIconButton">
-                <IconButton >
+                <IconButton onClick={handleDisplayPopUp}>
                     <ShoppingBasketIcon color="error" />
                 </IconButton>
                 {quantity > 0 && <div className="header__contentIconButton__counter">
