@@ -7,8 +7,8 @@ export class FakestoreApi {
             .then((response) => response as Product[]);
     };
 
-    static getProductById = async ({ id } : any): Promise<Product>  => {
-        return await fetch(`${BASE_URL_API}/product/${id}`)
+    static getProductById = async (id : number): Promise<Product>  => {
+        return await fetch(`${BASE_URL_API}/products/${id}`)
             .then((response) => response.json())
             .then((response) => response as Product);
     };

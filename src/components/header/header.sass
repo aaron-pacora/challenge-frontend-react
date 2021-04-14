@@ -15,9 +15,17 @@
         background: $c_white
         padding: 20px
 
+        @include breakpoint(550px)
+            flex-direction: row
+
     &__subtitle
         margin-top: 10px
         margin-bottom: 10px
+
+        @include breakpoint(550px)
+            width: calc(100% - 34px - 150px)
+            text-align: start
+            padding-left: 20px
 
     &__logo
         width: 150px
