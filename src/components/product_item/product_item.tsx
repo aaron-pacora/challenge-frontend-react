@@ -1,5 +1,9 @@
-export const ProductItem = () => {
+interface StackProps {
+    product: Product;
+}
+
+export const ProductItem = ({product}: StackProps) => {
     return <div className="productItem">
-        <span>Un Item</span>
+        <span>{product.title}</span>
     </div>;
 }

@@ -1,11 +1,14 @@
 import { ProductItem } from "components/product_item/product_item";
 
-export const ProductList = () => {
+interface StackProps {
+    products: Product[];
+}
+
+export const ProductList = ({products} : StackProps) => {
     return <div className="home__productList">
-        <ProductItem/>
-        <ProductItem/>
-        <ProductItem/>
-        <ProductItem/>
-        <ProductItem/>
+        {products.map((product) => <ProductItem
+            key={product.id}
+            product={product}
+        />)}
     </div>;
 }
