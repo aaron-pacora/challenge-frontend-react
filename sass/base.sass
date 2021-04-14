@@ -1,0 +1,87 @@
+@import './general.sass'
+
+@import '../src/styles'
+
+@font-face
+    font-family: 'Roboto'
+    src: url('/fonts/Roboto-Regular.ttf')
+    font-display: fallback
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+html
+    padding: 0
+    height: 100%
+    background-color: $c_white
+    scroll-behavior: smooth
+
+h3, p, h2
+    font-family: 'Roboto', sans-serif
+    color: $c_dark
+
+img
+    user-select: none
+
+/* FONT SIZE*/
+p
+    line-height: 140%
+    letter-spacing: 0.2px
+    color: $c_txt_dark
+    font-family: 'Roboto', sans-serif
+span
+    font-family: 'Roboto', sans-serif
+    color: $c_dark
+span.requerid
+    color: $c_gray
+    padding-left: 5px
+table tbody td
+    color: $c_dark
+input
+    border: 0
+    caret-color: $c_caret
+textarea:focus,input:focus
+    outline: none
+    caret-color: $c_caret
+img
+    font-size: 0
+a
+    text-decoration: none
+    cursor: pointer
+    font-family: 'Roboto', sans-serif
+
+li
+    list-style: none
+
+i
+    font-size: 0
+    display: block
+
+ul.parsley-errors-list
+    font-size: 12px
+
+    li
+        color: red
+        padding-top: 5px
+
+body
+    height: 100%
+#__next
+    height: 100%
+// body::-webkit-scrollbar-track
+//   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+
+@import './libs/normalize'
+@import './libs/font_face'
+
+.iframe
+    display: none
+    visibility: hidden
+
+.__padding-generic
+    padding: 53px 24px 0 24px
+
+.MuiMenu-paper.MuiPopover-paper
+    .MuiMenuItem-gutters.MuiListItem-gutters.MuiListItem-button
+        white-space: normal
